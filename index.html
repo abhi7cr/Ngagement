@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Engagement</title>
+</head>
+<body>
+    <h2>Welcome, Sudha</h2>
+    <p>
+      <strong>Please follow along and complete the tasks:</strong>
+    </p> 
+    <template id="question-template">
+        <p>Question</p>
+        <div>
+        <slot name="inputLabel">Default label</slot>
+        <slot name="input">Default input</slot>
+        <slot name="answer">Default answer</slot>
+    </div>
+    </template>
+    <question-element>
+        <label slot="inputLabel" for="capitalQ">What is the capital of Madagascar?</label>
+        <input slot="input" type="text" id="capitalQ" onkeyup="onCapitalQChange()" />
+        <p slot="answer" id="answer"></p>
+    </question-element>
+    <script src="index.js"></script>
+    <script src="question.js"></script> 
+</body>
+
+</html>
