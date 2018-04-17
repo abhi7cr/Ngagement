@@ -3,6 +3,12 @@
 
 <head>
     <title>Engagement</title>
+    <style>
+        body {
+         background-color: black;
+         color: white;
+        }
+    </style>
 </head>
 <body>
     <h2>Welcome, Sudha</h2>
@@ -10,17 +16,24 @@
       <strong>Please follow along and complete the tasks:</strong>
     </p> 
     <template id="question-template">
-        <p>Question</p>
+        <p>Question <slot name="questionNumber">Default Question Number</slot></p>
         <div>
-        <slot name="inputLabel">Default label</slot>
-        <slot name="input">Default input</slot>
-        <slot name="answer">Default answer</slot>
+        <slot name="inputLabel">Default Question</slot>
+        <slot name="input">Default User Answer</slot>
+        <slot name="validateAnswer">Default System Answer</slot>
     </div>
     </template>
-    <question-element>
+    <question-element id="question1">
         <label slot="inputLabel" for="capitalQ">What is the capital of Madagascar?</label>
-        <input slot="input" type="text" id="capitalQ" onkeyup="onCapitalQChange()" />
-        <p slot="answer" id="answer"></p>
+        <input slot="input" type="text" id="capitalQ" onchange="onCapitalQChange()" />
+        <p slot="validateAnswer" id="answer1"></p>
+        <span slot="questionNumber">1</span>
+    </question-element>
+    <question-element id="question2">
+      <label slot="inputLabel" for="secondHighestQ">What is the second highest mountain in India?</label>
+      <input slot="input" type="text" id="secondHighestQ" onchange="onSecondHighestMountainChange()" />
+      <p slot="validateAnswer" id="answer2"></p>
+      <span slot="questionNumber">2</span>
     </question-element>
     <script src="index.js"></script>
     <script src="question.js"></script> 
