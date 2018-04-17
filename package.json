@@ -1,0 +1,19 @@
+{
+  "name": "ngagement",
+  "version": "1.0.0",
+  "description": "ngagement trivia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhi7cr/Ngagement.git"
+  },
+  "author": "abhi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhi7cr/Ngagement/issues"
+  },
+  "homepage": "https://github.com/abhi7cr/Ngagement#readme"
+}
