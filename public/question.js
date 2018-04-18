@@ -5,7 +5,7 @@ customElements.define('question-element',
       const template = document
         .getElementById('question-template')
         .content
-      const shadowRoot = this.attachShadow({mode: 'open'})
+      const shadowRoot = this.attachShadow({mode: 'closed'})
       let style = document.createElement('style');
       style.textContent = '::slotted(label) { font-weight: bold;}'
       shadowRoot.appendChild(style)

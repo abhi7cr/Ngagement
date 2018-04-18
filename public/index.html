@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Engagement</title>
     <style>
         body {
-         background-color: black;
-         color: white;
-         font-family: 'IBM Plex Mono', monospace;
+            background-color: black;
+            color: white;
+            font-family: 'IBM Plex Mono', monospace;
         }
     </style>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
 </head>
+
 <body>
-    <h2>Welcome, Sudha</h2>
-    <p>
-      <h4>Please follow along and complete the tasks:</h4>
-    </p> 
+    <h2 id="heading">Welcome, Sudha</h2>
+    <h4 id="instructions">Please follow along and complete the tasks:</h4>
+    <img id="congrats" src="assets/congrats.gif" width="300" height="300" style="display:none;text-align:center;margin-left:40%;margin-top:14%;"
+    />
+    <img id="tryAgain" src="assets/tryAgain.gif" width="200" height="200" style="display:none;text-align:center;" />
+    <img id="notBad" src="assets/notBad.gif" width="200" height="200" style="display:none;text-align:center;" />
+    <img id="almostThere" src="assets/almostThere.gif" width="200" height="200" style="display:none;text-align:center;" />
     <template id="question-template">
-        <p>Question <slot name="questionNumber">Default Question Number</slot></p>
+        <p>Question
+            <slot name="questionNumber">Default Question Number</slot>
+        </p>
         <div>
-        <slot name="inputLabel">Default Question</slot>
-        <slot name="input">Default User Answer</slot>
-        <slot name="validateAnswer">Default System Answer</slot>
-    </div>
+            <slot name="inputLabel">Default Question</slot>
+            <slot name="input">Default User Answer</slot>
+            <slot name="validateAnswer">Default System Answer</slot>
+        </div>
     </template>
     <question-element id="question1">
         <label slot="inputLabel" for="capitalQ">What is the capital of Madagascar?</label>
@@ -31,13 +38,20 @@
         <span slot="questionNumber">1</span>
     </question-element>
     <question-element id="question2">
-      <label slot="inputLabel" for="secondHighestQ">What is the second highest mountain in India?</label>
-      <input slot="input" type="text" id="secondHighestQ" onchange="onSecondHighestMountainChange()" />
-      <p slot="validateAnswer" id="answer2"></p>
-      <span slot="questionNumber">2</span>
+        <label slot="inputLabel" for="secondHighestQ">What is the second highest mountain in India?</label>
+        <input slot="input" type="text" id="secondHighestQ" onchange="onSecondHighestMountainChange()" />
+        <p slot="validateAnswer" id="answer2"></p>
+        <span slot="questionNumber">2</span>
     </question-element>
+    <question-element id="question3">
+        <label slot="inputLabel" for="firstHorrorQ">What is the first horror movie we saw in Koramangala?</label>
+        <input slot="input" type="text" id="firstHorrorQ" onchange="onFirstHorrorMovieChange()" />
+        <p slot="validateAnswer" id="answer3"></p>
+        <span slot="questionNumber">3</span>
+    </question-element>
+
     <script src="index.js"></script>
-    <script src="question.js"></script> 
+    <script src="question.js"></script>
 </body>
 
 </html>
